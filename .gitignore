@@ -127,3 +127,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# images
+*.webp
+*.jpg
+*.jpeg
+*.png
+
+# migration files
+0*.py
