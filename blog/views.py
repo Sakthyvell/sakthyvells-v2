@@ -1,6 +1,6 @@
 from pipes import Template
 from pyexpat import model
-from django.views.generic import ListView, TemplateView
+from django.views.generic import TemplateView, DetailView
 from .models import Article, Category
 
 
@@ -12,4 +12,9 @@ class BlogListingView(TemplateView):
         context['posts'] = Article.objects.all()
         context['categories'] = Category.objects.all()
         return context
+
+class BlogDetailView(DetailView):
+    model = Article
+    template_name = 'blog-detail.html'
+
     
