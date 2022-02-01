@@ -3,9 +3,7 @@ from pyexpat import model
 from unicodedata import category
 
 from django.db import models
-from django.utils.translation import gettext as _
-
-from ckeditor.fields import RichTextField
+from django.utils.translation import gettext_lazy as _
 
 class Article(models.Model):
 
@@ -24,7 +22,7 @@ class Article(models.Model):
         blank=True,
         null=True
     )
-    body = RichTextField()
+    body = models.TextField()
     visibility = models.CharField(max_length=1, choices=ArticleVisibility.choices, default=ArticleVisibility.NO)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateField(auto_now=True)
