@@ -1,0 +1,62 @@
+<div class="container-fluid school">
+    <div class="row">
+        <div class="col">
+          1 of 3
+        </div>
+        <div class="col-6">
+            <p class="wow animate__animated animate__fadeIn" data-wow-offset="5" data-wow-duration="2s">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+        </div>
+        <div class="col">
+          3 of 3
+        </div>
+      </div>
+</div>
+
+<div class="container-fluid work">
+    <div class="container">
+        <div class="row">
+            {% for work in works %}
+                <div class="col">
+                    <div class="flip-card wow animate__animated animate__rotateIn" data-wow-offset="10">
+                        <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="img_avatar.png" alt="Avatar" style="width:300;height:300;">
+                            <p>{{ work.company }}</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>{{ work.role }}</h1>
+                            <p>{{ work.company }}</p>
+                            <p>{{ work.description }}</p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor works %}
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid project">
+    <div class="container">
+        <div class="row">
+            {% for project in projects %}
+                <div class="col">
+                    <div class="card project-card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{ project.image }}" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">{{ project.title }}</h5>
+                          <p class="card-text">{{ project.description }}</p>
+                          <a href="{{ project.url }}" class="btn btn-primary" target="_blank">Take a look</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor projects %}
+        </div>
+        <a href="#" class="btn btn-primary" target="_blank">See more</a>
+    </div>
+</div>
+
+<div class="container-fluid contact">
+    <p class="wow animate__animated animate__fadeIn" data-wow-offset="5">Contact</p>
+    <p class="wow animate__animated animate__fadeIn" data-wow-offset="5">You can contact me at </p>
+</div>

@@ -6,7 +6,7 @@ class HomePageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['projects'] = Project.objects.all()
+        context['projects'] = Project.objects.all().order_by('-id')[:3]
         context['works'] = Work.objects.all()
         context['schools'] = School.objects.all()
         return context
