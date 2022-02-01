@@ -1,0 +1,21 @@
+{% extends 'blog-base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Custom CSS -->
+<link href="{% static '/css/blog-detail.css' %}" rel="stylesheet">
+
+
+    <div class="container article">
+      <div class="article article-title">
+        <h2>{{ object.title }}</h2>
+      </div>
+      <div class="article article-date">
+        <h6>Updated on {{ object.updated_on }}</h6>
+      </div>
+      <div class="article article-content">
+        <p>{{ object.body|safe }}</p>
+      </div>
+    </div>
+{% endblock content %}

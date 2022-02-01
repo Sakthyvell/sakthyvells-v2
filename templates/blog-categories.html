@@ -3,15 +3,7 @@
 
 {% block content %}
 
-<!-- Custom CSS -->
 <link href="{% static '/css/blog-listing.css' %}" rel="stylesheet">
-
-<div class="alert alert-success" role="alert">
-<h4 class="alert-heading">Hello World!</h4>
-<p>Thanks for visiting. This site is still in development. I'm using this site to store my notes on things I learn along the way. You find something helpful or interesting as well !</p>
-<hr>
-<p class="mb-0">I like call these articles my 'hypotheses' since I'm always learning something new (and discovering what I learnt two months ago is insufficient). Please do let me know if something is lacking and can be improved upon. Thanks !</p>
-</div>
 
 <div class="container listing">
     {% for post in posts %}

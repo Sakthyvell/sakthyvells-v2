@@ -6,4 +6,5 @@ from .views import HomePageView
 
 urlpatterns = [
     path('', HomePageView.as_view(), name='home'),
+    path('about', HomePageView.as_view(), name='about'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
