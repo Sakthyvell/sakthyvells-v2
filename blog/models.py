@@ -5,6 +5,10 @@ from unicodedata import category
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+
+from ckeditor_uploader.fields import RichTextUploadingField
+
+
 class Article(models.Model):
 
     class ArticleVisibility(models.TextChoices):
@@ -22,7 +26,7 @@ class Article(models.Model):
         blank=True,
         null=True
     )
-    body = models.TextField()
+    body = RichTextUploadingField()
     visibility = models.CharField(max_length=1, choices=ArticleVisibility.choices, default=ArticleVisibility.NO)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateField(auto_now=True)
