@@ -1,0 +1,9 @@
+.article{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+}
+
+.article-content{
+    text-align: justify;
+}
