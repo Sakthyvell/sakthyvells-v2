@@ -152,13 +152,13 @@ CKEDITOR_CONFIGS = {
         'toolbar_Custom': [
                 {'name': 'Styling', 'items': ["Format", "Bold", "Italic", "Underline", "Strike", "SpellChecker"]},
                 {'name': 'Listing & Margin', 'items': ['NumberedList', 'BulletedList', "Indent", "Outdent", 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']},
-                {'name': 'Editing', 'items': ["Image", "Table", "Mathjax", "Link", "Unlink", "Anchor", "SectionLink", "Subscript", "Superscript"]}, 
+                {'name': 'Editing', 'items': ["Image", "Table", "Mathjax", "CodeSnippet", "Link", "Unlink", "Anchor", "SectionLink", "Subscript", "Superscript"]}, 
                 {'name': 'Undo/Redo', 'items': ['Undo', 'Redo']}, 
                 {'name': 'HTML', 'items': ["Source"]},
                 {'name': 'Window', 'items': ["Maximize"]}
             ],
         'mathJaxLib': '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML',
-        'extraPlugins': ','.join(['mathjax',]),
+        'extraPlugins': ','.join(['mathjax','codesnippet',]),
     }
 }
 
