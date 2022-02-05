@@ -1,4 +1,3 @@
-from unicodedata import category
 from .models import Category
 
 def categoryList(request):
