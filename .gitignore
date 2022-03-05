@@ -128,7 +128,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Extras
+# Custom
 .web-config
-.vscode
-media/
+/media
+.vscode/
