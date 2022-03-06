@@ -7,10 +7,6 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 class Article(models.Model):
 
-    class ArticleVisibility(models.TextChoices):
-        YES = 'Y', _('Yes')
-        NO = 'N', _('No')
-
     title = models.CharField(max_length=255)
     author =  models.ForeignKey(
         'auth.User',
@@ -23,7 +19,7 @@ class Article(models.Model):
         null=True
     )
     body = RichTextUploadingField()
-    visibility = models.CharField(max_length=1, choices=ArticleVisibility.choices, default=ArticleVisibility.NO)
+    visibility = models.BooleanField()
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateField(auto_now=True)
 
