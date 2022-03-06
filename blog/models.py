@@ -22,12 +22,6 @@ class Article(models.Model):
         blank=True,
         null=True
     )
-    subcategory  = models.ForeignKey(
-        'SubCategory', 
-        on_delete=models.CASCADE,
-        blank=True,
-        null=True
-    )
     body = RichTextUploadingField()
     visibility = models.CharField(max_length=1, choices=ArticleVisibility.choices, default=ArticleVisibility.NO)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -51,23 +45,6 @@ class Category(models.Model):
 
     def __str__(self) -> str:
         return self.category
-
-class SubCategory(models.Model):
-    subcategory = models.CharField(max_length=255)
-    category = models.ForeignKey(
-        'Category', 
-        on_delete=models.PROTECT, 
-        blank=True, 
-        null=True
-    )
-
-    class Meta:
-        verbose_name = 'Sub-Category'
-        verbose_name_plural = 'Sub-Categories'
-        ordering = ['subcategory']
-
-    def __str__(self) -> str:
-        return self.subcategory
 
 
 
