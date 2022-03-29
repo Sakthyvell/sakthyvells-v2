@@ -7,6 +7,7 @@ class BlogListingView(ListView):
     template_name = 'blog-listing.html'
     model = Article
     context_object_name = 'posts'
+    paginate_by=10
 
 class BlogDetailView(DetailView):
     model = Article
