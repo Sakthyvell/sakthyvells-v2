@@ -14,16 +14,21 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
 
-
-    <div class="container article">
-      <div class="article article-title">
-        <h2>{{ object.title }}</h2>
-      </div>
-      <div class="article article-date">
-        <h6>Updated on {{ object.updated_on }}</h6>
-      </div>
-      <div class="article article-content">
-        <p>{{ object.body|safe }}</p>
-      </div>
+  {% if object.visibility %}
+  <div class="container article">
+    <div class="article article-title">
+      <h2>{{ object.title }}</h2>
     </div>
+    <div class="article article-date">
+      <h6>Updated on {{ object.updated_on }}</h6>
+    </div>
+    <div class="article article-content">
+      <p>{{ object.body|safe }}</p>
+    </div>
+    </div>
+  {% else %}
+  <div class="alert alert-danger" role="alert">
+    The post that you are looking for is disabled. Sorry for the trouble.
+  </div>
+  {% endif %}
 {% endblock content %}
