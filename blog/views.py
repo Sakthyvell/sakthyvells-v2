@@ -1,6 +1,8 @@
 from django.views.generic import DetailView, ListView
 from django.shortcuts import render
 from .models import Article
+from django.contrib.auth.models import User
+
 
 
 class BlogListingView(ListView):
@@ -8,10 +10,6 @@ class BlogListingView(ListView):
     model = Article
     context_object_name = 'posts'
     paginate_by=10
-
-class BlogDetailView(DetailView):
-    model = Article
-    template_name = 'blog-detail.html'
 
 
 class BlogCategoryListView(ListView):
@@ -22,3 +20,9 @@ class BlogCategoryListView(ListView):
 def CategoryListView(request, pk):
     category_posts = Article.objects.filter(category = pk)
     return render(request, 'blog-categories.html', {'posts' : category_posts})
+
+def BlogDetailView(request, pk):
+    post = Article.objects.get(pk=pk)
+    author = User.objects.filter(username=post.author)
+    post.authorName = author[0].first_name+' '+ author[0].last_name
+    return render(request, 'blog-detail.html', {'object' : post})
