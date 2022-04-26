@@ -10,6 +10,7 @@
         <img src="https://img.shields.io/github/languages/count/sakthyvell/sakthyvells-v2" alt="">
         <img src="https://img.shields.io/github/languages/top/sakthyvell/sakthyvells-v2" alt="">
         <img src="https://img.shields.io/github/last-commit/sakthyvell/sakthyvells-v2" alt="">
+        <img src="https://img.shields.io/badge/development-completed-blue" alt="">
     </p>
 </div>
 
