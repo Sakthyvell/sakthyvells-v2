@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('my-site-login-2712/', admin.site.urls),
+    path('admin/', admin.site.urls),
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
     path('blog/', include('blog.urls')),
     path('', include('blog.urls')),
